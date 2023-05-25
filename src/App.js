@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import Home from './components/Home';
 import './App.css';
+import 'react-bootstrap';
+import { Helmet } from 'react-helmet';
+import {Routes, Route, Router, Navigate, useNavigate, Link} from 'react-router-dom';
+import React, { useState  } from 'react';
+import {ContactUs} from './components/bookAppointment.js'
+
+// Icons Color: #00F1FF
+// Resume Link: https://drive.google.com/file/d/1ZmtvoSyc7dpe4HaZXSCe5ynT6U__FqBY/view?usp=sharing
+
 
 function App() {
+
+  // const ComponentWithNavigation = () => {
+  // const navigate = useNavigate();
+    <Router>
+          const navigate = useNavigate();
+      <Routes>
+        <Route path="./components/bookAppointment" element={<ContactUs />} />
+      </Routes>
+    </Router>
+
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Helmet>
+        <title>Abhijith Dameruppala</title>
+      </Helmet>
+      <Home />
     </div>
+    
   );
 }
 
