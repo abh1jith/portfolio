@@ -62,16 +62,17 @@ function Home()  {
         
         
         {/* Appointment Page link */}
-        <button type="button" 
+        <a href='https://booking.appointy.com/abhijithdameruppala' target='_blank'>
+          <button type="button" 
                 className="btn btn-dark btn-sm col-xs-2" 
-                onClick= {handleButtonClick}
+                // onClick= {handleButtonClick}
         >
           <img src = {appointmentIcon} alt='appointmentIcon' width={55}/>
           <br />
           <br />
           <h4>SCHEDULE <br />MEETING</h4>
         </button>
-        
+        </a>
         <div className="card-body" style={{ paddingTop: "0" }}>
             {goToAppointment && (
               <div>

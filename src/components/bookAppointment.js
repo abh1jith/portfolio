@@ -27,6 +27,7 @@ export const ContactUs = () => {
       });
   };
 
+
     return (
     <form className="p-3 mb-2 bg-dark text-white" ref={form} 
     onSubmit={sendEmail}
@@ -39,7 +40,7 @@ export const ContactUs = () => {
           <label  className="form-label">Email</label>
           <input type="email" className="form-control" name="user_email" />
         </div>
-        <div className="mb">
+        {/* <div className="mb">
           <label className="form-label">Choose your time </label>
           <input type="datetime-local" className="form-control" id="time" name="preferred_time" /><br />
           <select id="timezone" name="timezone" className="form-control">
@@ -47,7 +48,7 @@ export const ContactUs = () => {
             <option value="EST">EST</option>
             <option value="EST">GMT</option>
           </select><br />
-        </div>
+        </div> */}
       
         <div className ="mb">
           <label className ="form-label">Message</label>
