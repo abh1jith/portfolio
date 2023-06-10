@@ -8,7 +8,10 @@ import projectIcon from './project-icon.png';
 import appointmentIcon from './appointment-icon.png';
 // import {Routes, Route, Router, Navigate, useNavigate, Link} from 'react-router-dom';
 import React, { useState  } from 'react';
-import {ContactUs} from './bookAppointment.js'
+import {ContactUs} from './bookAppointment.js';
+import { Button, ButtonGroup } from '@mui/material';
+
+
 // import ReCAPTCHA from "react-google-recaptcha";
 
 
@@ -37,6 +40,33 @@ function Home()  {
           
         Welcome to my Portfolio <br />
         [ It is still in the works! ]</p>
+
+{/* Material UI Test starts */}
+<ButtonGroup orientation="vertical"
+        aria-label="vertical contained button group"
+        variant="contained"
+        // "text"
+>
+<a target = "_blank" href='https://drive.google.com/file/d/1S7Ze1WcAd9jex-gLC7KTBf6f9h6ILRvs/view?usp=sharing'>
+  <Button><img src = {resumeIcon} alt='resumeIcon' />
+            <h3> RESUME</h3>
+  </Button>
+</a>
+
+  <Button><img src = {projectIcon} alt='projectIcon' />
+            <br />
+            <br />
+            <h3>PROJECTS</h3>
+  </Button>
+  
+<a href='https://booking.appointy.com/abhijithdameruppala' target='_blank'>
+  <Button><img src = {appointmentIcon} alt='appointmentIcon' width={55}/>
+          <h4>SCHEDULE <br />MEETING</h4>
+  </Button>
+</a>
+</ButtonGroup>
+{/* Material UI Test Ends */}
+
         <div className='gap-2'>
         
         <a target = "_blank" href='https://drive.google.com/file/d/1S7Ze1WcAd9jex-gLC7KTBf6f9h6ILRvs/view?usp=sharing'>
