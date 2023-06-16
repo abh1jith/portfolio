@@ -29,9 +29,9 @@ function App() {
       <Helmet>
         <title>Abhijith Dameruppala</title>
       </Helmet>
-      <Link to='./contactMe'>Home</Link>
+      {/* <Link to='./contactMe'>Home</Link> */}
 
-      <Link to="/">About</Link>
+      {/* <Link to="/">About</Link> */}
 
       <Home />
     </div>

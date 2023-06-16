@@ -6,14 +6,26 @@ import 'react-bootstrap';
 import resumeIcon from './resume-icon.png';
 import projectIcon from './project-icon.png';
 import appointmentIcon from './appointment-icon.png';
-// import {Routes, Route, Router, Navigate, useNavigate, Link} from 'react-router-dom';
+import {Routes, Route, Router, Navigate, useNavigate, Link} from 'react-router-dom';
 import React, { useState  } from 'react';
 import {ContactUs} from './bookAppointment.js';
 import { Button, ButtonGroup } from '@mui/material';
+import '../index.js';
+// import { BsMoonStarsFill } from 'react-icons';
 
 
 // import ReCAPTCHA from "react-google-recaptcha";
-
+function changeMode(){
+  
+  if(document.getElementsByTagName("h1")[0].style.color !== "black"){
+    document.getElementsByTagName("h1")[0].style.color = "black";
+    document.getElementsByTagName("h1")[0].style.backgroundColor = "White";
+}
+  else{
+    document.getElementsByTagName("h1")[0].style.color = "white";
+    document.getElementsByTagName("h1")[0].style.backgroundColor = "";
+  }
+}
 
 function Home()  {
   const [goToAppointment, setGoToAppointment] = React.useState(false);
@@ -37,12 +49,12 @@ function Home()  {
         width={150}
         />
         <p>
-          
+          <button className='btn btn-primary' onClick={changeMode}>Change Mode</button><br />
         Welcome to my Portfolio <br />
         [ It is still in the works! ]</p>
 
 {/* Material UI Test starts */}
-<ButtonGroup orientation="vertical"
+{/* <ButtonGroup orientation="vertical"
         aria-label="vertical contained button group"
         variant="contained"
         // "text"
@@ -64,7 +76,7 @@ function Home()  {
           <h4>SCHEDULE <br />MEETING</h4>
   </Button>
 </a>
-</ButtonGroup>
+</ButtonGroup> */}
 {/* Material UI Test Ends */}
 
         <div className='gap-2'>
