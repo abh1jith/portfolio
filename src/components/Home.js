@@ -11,6 +11,8 @@ import React, { useState  } from 'react';
 import {ContactUs} from './bookAppointment.js';
 import { Button, ButtonGroup } from '@mui/material';
 import '../index.js';
+import $ from 'jquery';
+
 // import { BsMoonStarsFill } from 'react-icons';
 
 
@@ -18,7 +20,8 @@ import '../index.js';
 function changeMode(){
   
   if(document.getElementsByTagName("h1")[0].style.color !== "black"){
-    document.getElementsByTagName("h1")[0].style.color = "black";
+    // document.getElementsByTagName("h1")[0].style.color = "black";
+    $("h1")[0].style.color = "black";
     document.getElementsByTagName("h1")[0].style.backgroundColor = "White";
 }
   else{
