@@ -12,6 +12,7 @@ import {ContactUs} from './bookAppointment.js';
 import { Button, ButtonGroup } from '@mui/material';
 import '../index.js';
 import $ from 'jquery';
+import "./style.css";
 
 // import { BsMoonStarsFill } from 'react-icons';
 
@@ -19,9 +20,9 @@ import $ from 'jquery';
 // import ReCAPTCHA from "react-google-recaptcha";
 function changeMode(){
   
+  // console.log($("#Header div"));
   if(document.getElementsByTagName("h1")[0].style.color !== "black"){
-    // document.getElementsByTagName("h1")[0].style.color = "black";
-    $("h1")[0].style.color = "black";
+    $("h1").style.color = "black";
     document.getElementsByTagName("h1")[0].style.backgroundColor = "White";
 }
   else{
@@ -45,9 +46,11 @@ function Home()  {
     }
   };
 
-    return <div>
+    return <div className='dark-body' id="Header">
     <Header />
-      <header className="App-header">
+      <header
+       className="App-header"
+       >
         <img src={logo} className="App-logo" alt="logo" 
         width={150}
         />
