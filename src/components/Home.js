@@ -22,7 +22,7 @@ function changeMode(){
   
   // console.log($("#Header div"));
   if(document.getElementsByTagName("h1")[0].style.color !== "black"){
-    $("h1").style.color = "black";
+    document.getElementsByTagName("h1")[0].style.color = "black";
     document.getElementsByTagName("h1")[0].style.backgroundColor = "White";
 }
   else{
