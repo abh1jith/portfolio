@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Header(){
     return (
         <div>
-            <div className="p-3 mb-2 bg-dark text-white"    >        
+            <div className="p-3-1"  id="head"  >        
                 <center>
                     <h1>ABHIJITH DAMERUPPALA</h1>
                     <p>IN 47404  &emsp; 

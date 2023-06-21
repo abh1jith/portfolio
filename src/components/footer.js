@@ -21,7 +21,7 @@ function Footer(){
 
   return (
         <div>
-            <div className="p-3 mb-2 bg-dark text-white">        
+            <div className="p-3" id="foot">        
                 <h5>ABHIJITH DAMERUPPALA </h5>
                 <button type="button" 
                 className="btn btn-dark btn-sm col-xs-2" 
