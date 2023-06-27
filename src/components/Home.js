@@ -24,10 +24,19 @@ function changeMode(){
   if(document.getElementsByTagName("h1")[0].style.color !== "black"){
     document.getElementsByTagName("h1")[0].style.color = "black";
     document.getElementsByTagName("h1")[0].style.backgroundColor = "White";
+    document.getElementById("Header").classList.add("light-body");
+    document.getElementById("foot").classList.add("p-3-light");
+    document.getElementById("head").classList.add("p-3-1-light");
 }
   else{
     document.getElementsByTagName("h1")[0].style.color = "white";
     document.getElementsByTagName("h1")[0].style.backgroundColor = "";
+    document.getElementById("Header").classList.remove("light-body");
+    document.getElementById("Header").classList.add("dark-body");
+    document.getElementById("foot").classList.remove("p-3-light");
+    document.getElementById("foot").classList.add("p-3");
+    document.getElementById("head").classList.remove("p-3-1-light");
+    document.getElementById("head").classList.add("p-3-1");
   }
 }
 
