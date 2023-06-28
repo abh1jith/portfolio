@@ -6,12 +6,9 @@ import 'react-bootstrap';
 import resumeIcon from './resume-icon.png';
 import projectIcon from './project-icon.png';
 import appointmentIcon from './appointment-icon.png';
-import {Routes, Route, Router, Navigate, useNavigate, Link} from 'react-router-dom';
 import React, { useState  } from 'react';
 import {ContactUs} from './bookAppointment.js';
-import { Button, ButtonGroup } from '@mui/material';
 import '../index.js';
-import $ from 'jquery';
 import "./style.css";
 
 // import { BsMoonStarsFill } from 'react-icons';
@@ -22,12 +19,43 @@ function changeMode(){
   
   // console.log($("#Header div"));
   if(document.getElementsByTagName("h1")[0].style.color !== "black"){
-    $("h1").style.color = "black";
-    document.getElementsByTagName("h1")[0].style.backgroundColor = "White";
+    document.getElementsByTagName("h1")[0].style.color = "black";
+    // Light Mode
+    document.getElementsByTagName("h1")[0].style.backgroundColor = "#C0C0C0";
+    document.getElementById("Header").classList.add("light-body");
+    document.getElementById("foot").classList.add("p-3-light");
+    document.getElementById("head").classList.add("p-3-1-light");
+    // Button changeMode
+
+    document.getElementById("projectBtn").classList.remove("btn-dark");
+    document.getElementById("projectBtn").classList.add("btn-light-spec");
+
+    document.getElementById("resumeBtn").classList.remove("btn-dark");
+    document.getElementById("resumeBtn").classList.add("btn-light-spec");
+
+    document.getElementById("meetingBtn").classList.remove("btn-dark");
+    document.getElementById("meetingBtn").classList.add("btn-light-spec");
+
 }
   else{
+    // Dark Mode
     document.getElementsByTagName("h1")[0].style.color = "white";
     document.getElementsByTagName("h1")[0].style.backgroundColor = "";
+    document.getElementById("Header").classList.remove("light-body");
+    document.getElementById("Header").classList.add("dark-body");
+    document.getElementById("foot").classList.remove("p-3-light");
+    document.getElementById("foot").classList.add("p-3");
+    document.getElementById("head").classList.remove("p-3-1-light");
+    document.getElementById("head").classList.add("p-3-1");
+    // Button changeMode
+    document.getElementById("projectBtn").classList.remove("btn-light-spec");
+    document.getElementById("projectBtn").classList.add("btn-dark");
+
+    document.getElementById("meetingBtn").classList.remove("btn-light-spec");
+    document.getElementById("meetingBtn").classList.add("btn-dark");
+
+    document.getElementById("resumeBtn").classList.remove("btn-light-spec");
+    document.getElementById("resumeBtn").classList.add("btn-dark");
   }
 }
 
@@ -59,36 +87,11 @@ function Home()  {
         Welcome to my Portfolio <br />
         [ It is still in the works! ]</p>
 
-{/* Material UI Test starts */}
-{/* <ButtonGroup orientation="vertical"
-        aria-label="vertical contained button group"
-        variant="contained"
-        // "text"
->
-<a target = "_blank" href='https://drive.google.com/file/d/1S7Ze1WcAd9jex-gLC7KTBf6f9h6ILRvs/view?usp=sharing'>
-  <Button><img src = {resumeIcon} alt='resumeIcon' />
-            <h3> RESUME</h3>
-  </Button>
-</a>
 
-  <Button><img src = {projectIcon} alt='projectIcon' />
-            <br />
-            <br />
-            <h3>PROJECTS</h3>
-  </Button>
-  
-<a href='https://booking.appointy.com/abhijithdameruppala' target='_blank'>
-  <Button><img src = {appointmentIcon} alt='appointmentIcon' width={55}/>
-          <h4>SCHEDULE <br />MEETING</h4>
-  </Button>
-</a>
-</ButtonGroup> */}
-{/* Material UI Test Ends */}
-
-        <div className='gap-2'>
+        <div className='gap-2' id="xyz">
         
         <a target = "_blank" href='https://drive.google.com/file/d/1S7Ze1WcAd9jex-gLC7KTBf6f9h6ILRvs/view?usp=sharing'>
-          <button type="button" className="btn btn-dark btn-sm col-xs-2">
+          <button id="resumeBtn" type="button" className="btn btn-dark btn-sm col-xs-2">
             <img src = {resumeIcon} alt='resumeIcon' />
             <br />
             <br />
@@ -98,7 +101,9 @@ function Home()  {
         
         {/* Projects Link */}
         <a>
-          <button type="button" 
+          <button 
+                  id="projectBtn"
+                  type="button" 
                   className="btn btn-dark btn-sm col-xs-2 m-2"
             >
             <img src = {projectIcon} alt='projectIcon' />
@@ -111,7 +116,7 @@ function Home()  {
         
         {/* Appointment Page link */}
         <a href='https://booking.appointy.com/abhijithdameruppala' target='_blank'>
-          <button type="button" 
+          <button id="meetingBtn" type="button" 
                 className="btn btn-dark btn-sm col-xs-2" 
                 // onClick= {handleButtonClick}
         >
