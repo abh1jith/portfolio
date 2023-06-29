@@ -22,21 +22,59 @@ function changeMode(){
   
   // console.log($("#Header div"));
   if(document.getElementsByTagName("h1")[0].style.color !== "black"){
+    // Dark Mode to Light Mode
     document.getElementsByTagName("h1")[0].style.color = "black";
-    document.getElementsByTagName("h1")[0].style.backgroundColor = "White";
+    document.getElementsByTagName("h1")[0].style.backgroundColor = "#C0C0C0";
+
+    document.getElementById("Header").classList.remove("dark-body");
     document.getElementById("Header").classList.add("light-body");
+
+    document.getElementById("foot").classList.remove("p-3");
     document.getElementById("foot").classList.add("p-3-light");
+
+    document.getElementById("foot").classList.remove("p-3-1");
     document.getElementById("head").classList.add("p-3-1-light");
-}
+
+    // Button Color Change
+    // document.getElementById("resBtn").classList.remove("btn-dark");
+    document.getElementById("resBtn").style.backgroundColor = "#828282";
+    document.getElementById("resBtn").style.color = "black";
+
+
+    // document.getElementById("proBtn").classList.remove("btn-dark");
+    document.getElementById("proBtn").style.backgroundColor = "#828282";
+    document.getElementById("proBtn").style.color = "black";
+
+
+    // document.getElementById("meetBtn").classList.remove("btn-dark");
+    document.getElementById("meetBtn").style.backgroundColor = "#828282";
+    document.getElementById("meetBtn").style.color = "black";
+
+  }
   else{
+    // Light Mode to Dark Mode
     document.getElementsByTagName("h1")[0].style.color = "white";
     document.getElementsByTagName("h1")[0].style.backgroundColor = "";
+
     document.getElementById("Header").classList.remove("light-body");
     document.getElementById("Header").classList.add("dark-body");
+
     document.getElementById("foot").classList.remove("p-3-light");
     document.getElementById("foot").classList.add("p-3");
+
     document.getElementById("head").classList.remove("p-3-1-light");
     document.getElementById("head").classList.add("p-3-1");
+
+    // Button Color Change
+    document.getElementById("resBtn").style.backgroundColor = "";
+    document.getElementById("resBtn").style.color = "white";
+
+    document.getElementById("proBtn").style.backgroundColor = "";
+    document.getElementById("proBtn").style.color = "white";
+
+    document.getElementById("meetBtn").style.backgroundColor = "";
+    document.getElementById("meetBtn").style.color = "white";
+
   }
 }
 
@@ -97,7 +135,7 @@ function Home()  {
         <div className='gap-2' id="xyz">
         
         <a target = "_blank" href='https://drive.google.com/file/d/1S7Ze1WcAd9jex-gLC7KTBf6f9h6ILRvs/view?usp=sharing'>
-          <button type="button" className="btn btn-dark btn-sm col-xs-2">
+          <button id="resBtn" type="button" className="btn btn-dark btn-sm col-xs-2">
             <img src = {resumeIcon} alt='resumeIcon' />
             <br />
             <br />
@@ -107,7 +145,8 @@ function Home()  {
         
         {/* Projects Link */}
         <a>
-          <button type="button" 
+          <button id="proBtn"
+                  type="button" 
                   className="btn btn-dark btn-sm col-xs-2 m-2"
             >
             <img src = {projectIcon} alt='projectIcon' />
@@ -120,7 +159,8 @@ function Home()  {
         
         {/* Appointment Page link */}
         <a href='https://booking.appointy.com/abhijithdameruppala' target='_blank'>
-          <button type="button" 
+          <button id="meetBtn"
+                type="button" 
                 className="btn btn-dark btn-sm col-xs-2" 
                 // onClick= {handleButtonClick}
         >
